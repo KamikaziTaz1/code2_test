@@ -1,4 +1,5 @@
 int sceneNumber = 0;
+int xVal;
 
 void setup() {
   size(1000, 1000);
@@ -76,12 +77,14 @@ void scene2() {
   noStroke();
    background(0, 0, 255);
    noStroke();
-   rect(500, 100, 200, 100);//(x, y, w, h)
+   rect(500 + xVal, 100, 200, 100);//(x, y, w, h)
   fill(200, 0, 24);
-  ellipse(700, 200, 100, 100);
-  ellipse(500, 200, 100, 100);
+  ellipse(700 + xVal, 200, 100, 100);
+  ellipse(500 + xVal, 200, 100, 100);
   fill(30, 40, 25);
   fill(255);
   textSize(32);
   text("vroom vroom", 600, 600);
+  
+  xVal+= 5;
 }
