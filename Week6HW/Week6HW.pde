@@ -1,7 +1,8 @@
 int sceneNumber = 0;
 int xVal;
 int [] x = new int[0];
-int [] y = new int[0]
+int [] y = new int[0];
+int strings;
 
 void setup() {
   size(1000, 1000);
@@ -100,7 +101,7 @@ void scene2() {
   xVal+= 5;
 }
 
+{
 saveStrings("strings.txt", strings);
 exit();
  }
-}
