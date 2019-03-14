@@ -1,10 +1,13 @@
 int sceneNumber = 0;
-int xVal;
-int [] x = new int[0];
-int [] y = new int[0];
-int strings;
+int xVal, yVal;
+int [] xPos = new int[0];
+int [] yPos = new int[0];
+
+String [] xValue;
 
 void setup() {
+  xValue = loadStrings("xValue.csv");
+    
   size(1000, 1000);
 }
 
@@ -30,8 +33,7 @@ void draw() {
 
 void mousePressed() {
   sceneNumber++;
-  x = append(x, mouseX);
-  y = append(y, mouseY);
+ // xPos = append(xVal, yVal);
 }
 
 void keyPressed() {
@@ -52,9 +54,8 @@ void keyPressed() {
   }
   
   if (key == 's'){
-    String[] lines = new String[x.length];
-    for (int i = 0; i<x.length; i++) {
-      lines[i] = x[i] + "\t" + y[i];  
+ //  String[] lines = new String[x.length];
+    for (int i = 0; i<xPos.length; i++) {
     }
   }
 }
@@ -99,9 +100,10 @@ void scene2() {
   text("vroom vroom", 600, 600);
   
   xVal+= 5;
+  
+  println("xVal is" + xVal);
+  
+  xValue = append(xVal, str(xValue));
+  saveStrings("xValue.csv", xValue);
+  exit();
 }
-
-{
-saveStrings("strings.txt", strings);
-exit();
- }
